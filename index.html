@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Course Run | Helping you find courses</title>
+<meta name="author" content="raj nathani">
+<meta name="description" content="Course run helps students at University of Toronto in selection of courses based on preferences like credits, lecture timings, breadth/distribution categories, etc">
+<meta name="keywords" content="university of toronto course run, university of toronto course, university of toronto,
+course run, uoft course run, uoftcourserun, calendar, timetable, course finder, utoronto">
+
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="ienot9.css" />
+<![endif]-->
+</head>
+<body style="background-color:rgb(220,220,220); min-width:1080px;">
+<div id="container">
+<div id="header">
+	<img id="main-logo" onmouseover="document.getElementById('main-logo').style.cursor='pointer'" onclick="document.location.href = 'index.html';" src="img/course_run_head.png" />
+</div>
+<div id="nav-bar">
+<div id="nav-links">
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/calendar/#">CALENDAR</a>
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/timetable/winter/sponsors.htm">TIMETABLE</a>
+<a class="link left" href="http://www.artsci.utoronto.ca/current/undergraduate/first-year-seminars/">SEMINARS</a>
+<a class="link left" href="https://www.rosi.utoronto.ca/main.html">ROSI</a>
+</div>
+<form name="search" style="margin:0; padding:0; float:right;" action="cgi-bin/search.py">
+<input type="text" name="query" id="search-box" class="search-box" maxlength="100" autocomplete="off" value="Course Code or Program" tabindex="2" onFocus="removeSearchText();" onBlur="addDim();"/>
+<input type="submit" class="search-button" value="GO" tabindex="3">
+</form>
+</div>
+
+<div id="all-boxes">
+
+<!--div class="introduction" style="margin-right:20px;"-->
+	<div class="introduction">
+<a href="course_finder.html" class="image-link"><img src="img/courserun-logo.jpg" height="180" style="display:block; margin: 13px auto 15px auto;"></a>
+<i>Course Run</i> is the ultimate search platform for finding courses at University of Toronto (Arts & Science).
+It has filters for breadth/distribution requirements, year level, duration, credits, programs, and lecture, tutorial, and practical timings.
+(The database includes First Year Seminars too)
+
+ <a class="start-course-run" href="course_finder.html">START NOW</a>
+</div>
+
+
+<!--div class="introduction">
+<img src="img/timetable-generator.jpg" height="180" style="display:block; margin: 13px auto 15px auto;">
+Finished selecting courses? Wondering how to put them together? Not to worry. There are timetable generators out there already!
+<ul>
+<li><a href="http://botond.h.xp-dev.com/timetable" style="text-decoration:none;" rel="nofollow">botond.h.xp-dev.com/timetable</a> (Offline Application)</li>
+<li><a href="http://www.seakorp.com" style="text-decoration:none;" rel="nofollow">www.seakorp.com</a> (Online Application)</li>
+</ul>
+<small>* the above two applications aren't developed by us, thus any problems encountered won't be our responsibility.</small>
+</div-->
+</div>
+
+
+<div id="footer">
+<div class="footer-list">
+<ul>
+<li><span onClick="popUp('feedback');" tabindex="4">feedback</span></li>
+<li><span onClick="popUp('about');" tabindex="5">about</span></li>
+<li><span onClick="popUp('bug');" tabindex="6">report bug</span></li>
+<li><a href="http://www.facebook.com/pages/Course-Run-University-of-Toronto/392789940783083" tabindex="7">facebook</a></li>
+<li><a href="https://twitter.com/CourseRun" tabindex="8">twitter</a></li>
+</ul>
+</div>
+Copyright &copy;2012 Gigadote | All Rights Reserved
+</div>
+</div>
+
+</body>
+<script type="text/javascript" language="Javascript" src="js/main.js"></script>
+<script>window.onload = function(){popUp('goodbye')}</script>
+</html>

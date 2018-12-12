@@ -1,0 +1,168 @@
+<html lang="en" dir="ltr">
+<head>
+<style type="text/css">
+
+.popup{
+	position:absolute;
+	margin:auto;
+	width:200px;
+	height:150px;
+	font-family:verdana;
+	font-size:13px;
+	background-color:rgb(240,240,240);
+	border:2px solid grey;
+	z-index:100000000000000000;
+	}
+	
+.cancel{
+	position:relative;
+	cursor:pointer;
+	margin:0;
+	float:right;
+	height:10px;
+	width:14px;
+	padding:0 0 5px 0;
+	background-color:red;
+	text-align:center;
+	font-weight:bold;
+	font-size:11px;
+	color:white;
+	border-radius:3px;
+	z-index:100000000000000000;
+	}
+
+.cancel:hover{
+	background:rgb(255,50,50);
+	}
+	
+</style>
+<script type="text/javascript">
+
+var feedback_open = false;
+
+function popUp(){
+	if (feedback_open){ return false;}
+	feedback_open = true;
+	document.getElementById('con').style.opacity = "0.5";
+    var popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.id = 'test';
+    var cancel = document.createElement('div');
+    cancel.className = 'cancel';
+    cancel.innerHTML = 'x';
+    cancel.onclick = function (e) {feedback_open = false; popup.parentNode.removeChild(popup); document.getElementById('con').style.opacity = "1.0"; };
+    var message = document.createElement('p');
+    message.innerHTML = "This is a test message";
+    popup.appendChild(message);                                    
+    popup.appendChild(cancel);
+	
+	var h = (0.3 * parseFloat(window.innerHeight));
+	var w = (parseFloat(window.innerWidth));
+	var scrolledDown = window.scrollY;
+	
+	if (!h){  
+	var h = (0.3 * parseFloat(document.body.offsetHeight));
+	var w = (parseFloat(document.body.offsetWidth));
+	var scrolledDown = document.body.scrollTop;
+	}
+	alert(h);
+	alert(w);
+	alert(scrolledDown);
+	popup.style.top = h + scrolledDown + "px";
+	popup.style.left = 0.5*(w - 200) + "px";
+    document.body.appendChild(popup);
+    }
+</script>
+</head>
+<body>
+<div id="con">
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/
+blfffffffff<br/>
+
+
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+ffffffffffffff
+blfffffffff<br/>
+blfffffffff<br/>
+blfffffffff<br/>
+f
+</div>
+<button onClick="popUp();">click here</button>
+
+</body>
+</html>

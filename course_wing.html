@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta name="author" content="raj nathani">
+<meta name="description" content="Course run is a course finder for University of Toronto">
+<meta name="keywords" content="university of toronto course run, university of toronto course, university of toronto,
+course run, uoft course run, uoftcourserun, calendar, timetable, course finder, utoronto">
+
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<link rel="stylesheet" href="css/style_course_wing.css" type="text/css"/>
+</head>
+<body>
+
+<div id="header">
+	
+	<img src="course_run_head.png"/>
+</div>
+<div id="nav-bar">
+<div id="nav-links">
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/calendar/#">CALENDAR</a>
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/timetable/winter/sponsors.htm">TIMETABLE</a>
+<a class="link left" href="http://www.artsci.utoronto.ca/current/undergraduate/first-year-seminars/">SEMINARS</a>
+<a class="link left" href="https://www.rosi.utoronto.ca/main.html">ROSI</a>
+</div>
+<form name="search" style="margin:0; padding:0;" action="cgi-bin/search.py">
+<input type="submit" class="search-button" value="GO" tabindex="1">
+<input type="text" name="query" id="search-box" class="search-box" autocomplete="off" value="Course Code" tabindex="0" onFocus="removeSearchText();" onBlur="addDim();"/>
+
+</form>
+</div>
+
+<div id="search-area">
+<div id="empty-image" style="width:150px; height:50px;"></div>
+<form style="margin:auto; margin-top:0; margin-bottom:0; padding:0;">
+<input type="text" class="wing-search-box"/>
+<input type="submit" class="wing-button" value="Search"/>
+</form>
+</div>
+
+
+<div id="footer">
+<div class="footer-list">
+<ul>
+<li><a href tabindex="3">feedback</a></li>
+<li><a href tabindex="4">about</a></li>
+<li><a href tabindex="5">report bug</a></li>
+<li><a href tabindex="6">facebook</a></li>
+<li><a href tabindex="7">twitter</a></li>
+</ul>
+</div>
+Copyright &copy;2012 Gigadote | All Rights Reserved
+</div>
+</body>
+<script type="text/javascript" language="Javascript" src="js/main.js"></script>
+</html>

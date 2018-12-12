@@ -1,0 +1,17 @@
+wprint Content-type: text/html\n\n
+print <!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+print <title>Results</title>
+<meta author="raj nathani">
+<meta name="description" content="Course run is a course finder for University of Toronto">
+<meta name="keywords" content="university of toronto course run, university of toronto course, university of toronto, course run, uoft course run, uoftcourserun, calendar, timetable, course finder, utoronto">
+<link rel="stylesheet" href="/style2.css" type="text/css"/>
+<link rel="stylesheet" href="/style_results.css" type="text/css"/>
+
+</head><body>
+<div id="header"><div id="img-holder"><img src="/course_run_head.png"></div></div>
+
+<div id="footer">
+</div>
+          
+</body></html>

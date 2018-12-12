@@ -1,0 +1,239 @@
+body{
+	background:rgb(230,230,230);
+	min-width:1000px;
+	}
+
+#distribution-categories{
+	display: none;
+	}
+
+#content-box {
+
+	line-height:1.4em;
+	}
+
+#hippy-form {
+	position:relative;
+	width: 93%;
+	margin:auto;
+	margin-top: 50px;
+	margin-bottom:0px;
+	padding:0;
+	
+	font-family: Verdana;
+	
+	font-weight:600;
+	color:rgb(65,65,65);
+	}
+	
+.sub-header{
+	margin:0;
+	
+	text-align:center;
+	color:rgb(238,238,238);
+	text-shadow: 1px 1px 1px rgb(100,100,100);
+	
+	bacund:rgb(210,210,210) !important;	
+	}
+	
+
+	
+.options{
+	position:relative;
+	color:rgb(52,52,52);
+	margin:0;
+	padding-left:20px;
+
+	}
+	
+.breadth{
+	width:300px;
+	background:rgb(90,150,200);
+	}
+
+.credit{
+    width:300px;
+	background:green;
+	}
+
+
+.year{
+	width:300px;
+	background:rgb(250,100,50);
+	}
+.preferred-programs{
+	width:300px;
+	background:rgb(20,60,200);
+	}
+	
+.time-selection{
+	width:300px;
+	background:rgb(180,120,80);
+	}
+
+.selection{
+	margin:0;
+	}
+	
+table.selection-table{
+	margin:auto;
+	margin-top:0;
+	margin-bottom:8px;
+
+	width:970px;
+	background-color: rgb(244,244,244);
+	font-size:12px;
+
+	}
+
+table.selection-table td{
+	padding: 8px 6px;
+	border-color: grey;
+	border: 1px solid rgb(145,145,145);
+	}
+
+table.choose-category {
+	width:100%;
+	margin:0;
+	margin-bottom: 8px;
+	border-collapse:collapse;
+	}
+	
+table.choose-category th {
+	font-weight: bold;
+	color:rgb(67,67,67);
+	border:1px solid grey;
+	}
+	
+table.choose-category td {
+	cursor:pointer;
+	font-size:11px;
+	padding:4px;
+	text-align:center;
+	box-shadow:inset 2px 2px rgb(180,200,240);
+	-moz-box-shadow: inset 2px 2px rgb(180,200,240);
+	-webkit-box-shadow: inset 2px 2px rgb(180,200,240);
+	background: rgb(200,220,255);
+	border:1px solid grey;
+	}
+
+table.choose-category td:hover{
+	background: rgb(170,190,230);
+	}
+	
+table.choose-category td:active{
+	background: blue;
+	box-shadow:inset 2px 2px 1px rgb(70,90,255);
+	-moz-box-shadow: inset 2px 2px 1px rgb(70,90,255);
+	-webkit-box-shadow: inset 2px 2px 1px rgb(70,90,255);
+	}
+
+label{
+	margin:0;
+	padding:2px;
+	padding-right:4px;
+	cursor:pointer;
+
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	}
+
+label:hover{
+	background:rgb(237,237,237);
+	}
+	
+label:active{
+	background:rgb(204,248,208);
+	}
+	
+#breadth-option{
+	text-decoration:underline;
+	}
+
+#distribution-option{
+	text-decoration:none;
+	}
+
+h1.mini-head {
+	padding:0;
+	margin:1px 0px 2px 4px;
+
+	text-decoration:underline;
+	text-transform: uppercase;
+	color:rgb(50,50,50);
+	font-size:12px;
+	font-weight:bold;
+	}
+
+.more {
+	margin:0;
+	padding:0;
+	width:45px;
+	font-size:11px;
+	color:blue;
+	cursor:pointer;
+	}
+	
+#more_preferred{
+	margin:0;
+	padding:0;
+	}
+	
+#styled-submit-area{
+	margin:auto;
+	}
+	
+.styled-submit{
+	position:relative;
+	margin:0;
+	margin-bottom:30px;
+	margin-left:47%;
+	padding:4px 11px;
+
+	font-weight:bold;
+	font-size:14px;
+	font-family:verdana;
+	color:rgb(245,245,245);
+	text-align:center;
+	text-shadow: 1px 1px 4px rgb(140,140,140);
+	
+	border:1px solid rgb(15,38,200);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+
+	background-color:rgb(19,40,220);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=rgb(29,50,240),EndColorStr=rgb(19,40,220));
+	background-image:-moz-linear-gradient(top,rgb(70,70,70)) 0,rgb(5,5,5) 45px);
+	background-image:-ms-linear-gradient(top,rgb(70,70,70) 0,rgb(5,5,5) 45px);
+	background-image:-o-linear-gradient(top,rgb(70,70,70) 0,rgb(5,5,5) 45px);
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,rgb(70,70,70)),color-stop(45px,rgb(5,5,5)));
+	background-image:-webkit-linear-gradient(top,rgb(29,50,240) 0,rgb(19,40,220) 7px);
+	background-image:linear-gradient(to bottom,rgb(70,70,70)) 0,rgb(5,5,5) 45px);
+	
+	-moz-box-shadow: 1px 1px 3px rgb(92,92,92);
+	-webkit-box-shadow: 1px 1px 3px rgb(92,92,92);
+	box-shadow: 1px 1px 3px rgb(92,92,92);	
+	}
+
+.styled-submit:hover{
+	background-image:-webkit-linear-gradient(top,rgb(34,55,255) 0,rgb(24,45,245) 7px);
+	}
+
+input[type="checkbox"]{
+	vertical-align:middle;
+	height:12px;
+	width:12px;
+	}
+
+#footer{
+	border-top: solid 2px rgb(200,200,200);
+	background-color:rgb(238,238,238);
+	margin-top:36px;
+		}
+select{
+	margin:5px 11px 0px 0px;
+	}

@@ -1,0 +1,256 @@
+
+#results-area{
+	position:relative;
+	margin:0;
+	margin-top:37px;
+	padding:0;
+	}
+
+#courses{
+	position:relative;
+	margin:0;
+	padding:0;
+	}
+	
+div.no-matches{
+	position:relative;
+	padding:0;
+	margin:17px;
+	margin-bottom:30px;
+	
+	font-family:verdana;
+	font-size:14px;
+	color:rgb(30,30,30);
+	}
+	
+ul.results{
+	margin:0;
+	padding:0;
+	word-wrap:break-word;}
+	
+ul.results li{
+	margin:0px 0px 0px 40px;
+	padding:0;
+	width:700px;
+	max-width:700px;
+	word-wrap:break-word;
+	list-style-type:none;
+	line-height:1.4em;
+	font-family:verdana !important;
+	color:rgb(40,40,40);
+	font-size:13px !important;}
+	
+#filter-choice-box{
+	position:relative;
+	padding:15px 0px 7px 0px;
+	margin:0;
+	margin-bottom:20px;
+	float:right;
+	width:250px;
+	height:auto;
+	background: rgb(242,242,242);
+	
+	font-size:11px;
+	font-family:verdana;
+
+	border: solid 1px rgb(135,135,135);
+	border-width:1px 0px 1px 1px;
+	border-radius: 2px 0px 0px 2px;
+	-moz-border-radius: 2px 0px 0px 2px;
+	-khtml-border-radius: 2px 0px 0px 2px;
+	-webkit-border-radius: 2px 0px 0px 2px;}
+	
+h1.filter-head{
+	position:relative;
+	margin:5px 0px 6px 0px;
+	padding:4px 0px;
+	width:100%;
+	
+	text-align:center;
+	font-family:georgia;
+	font-size:11px;
+	font-weight:600;
+	color:rgb(70,70,70);
+
+	background-color:rgb(234,234,234);
+	border-top:1px solid rgb(170,170,170);
+	border-bottom:1px solid rgb(162,162,162);
+	}
+
+div.filter-list{
+	margin:0;
+	padding:0;
+	}
+	
+div.filter-list ul{
+	margin:0;
+	padding:0;
+	margin-left:23px;
+	list-style-type:square;
+	}
+
+div.filter-list ul li{
+	margin:0;
+	margin-bottom:4px;
+	padding:0;
+	}
+	
+h1.filter{
+	position:relative;
+	margin:0;
+	padding:3px 0px;
+	
+	text-align:center;
+	font-family:verdana;
+	font-size:12px;
+	font-weight:600;
+	color:rgb(50,50,50);
+	}
+	
+
+strong{
+	font-weight:600;
+	color:rgb(20,20,20);
+	}
+
+h1.results-head{
+	position:relative;
+	margin:5px 0px 20px 40px;
+	
+	text-align:left;
+	font-family:courier new;
+	letter-spacing:1px;
+	font-size: 14px;
+	font-weight:600;
+	color:rgb(20,20,20);
+	}
+
+span.program-name{
+	font-family:verdana;
+	font-weight:normal;
+	}
+span.strong{
+		font-weight:bold;
+		}
+		
+ul.results li table{
+	margin:10px 0px;
+	padding:0;
+	width:700px;
+	min-width:700px;
+	max-width:700px;
+	border-collapse:collapse;
+	}
+
+ul.results li table tr{
+	margin:0;
+	padding:0;
+	}
+	
+ul.results li table td{
+	margin:0;
+	padding:10px 15px;
+	vertical-align:top;
+	border-radius:2px;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	vertical-align:top;
+	word-wrap:break-word;
+	}
+
+ul.results li table td ul{
+	position:relative;
+	margin:0;
+	margin-bottom:5px;
+	padding:0;
+	}
+	
+ul.results li table td ul.il li{
+	}
+
+ul.results li h1{
+	margin:0;
+	margin-bottom:4px;
+	padding:0;
+	text-align:center;
+	font-size:12px;
+	font-family:verdana;
+	}
+
+ul.results li table tr td li{
+	position:relative;
+	margin:0;
+	padding:0;
+	margin-right:10px;
+	padding-left:13px;
+	list-style-type:none;
+	background: url('../img/arrow.png') no-repeat;
+	background-position: 0px 4px;
+	}
+
+#f ul{
+	max-width:320px;
+	}
+#s ul{
+	max-width:320px;
+	}
+#y ul{
+	max-width:670px;
+	}
+	
+#f ul li{
+	max-width:320px;
+	}
+#s ul li{
+	max-width:320px;
+	}
+#y ul li{
+	max-width:670px;
+	}
+#f{
+	min-width:320px;
+	max-width:320px;
+	background-color: rgb(184,255,214);
+	border-radius:1px 0px 0px 1px;
+	-moz-border-radius: 1px 0px 0px 1px;
+	-khtml-border-radius: 1px 0px 0px 1px;
+	-webkit-border-radius: 1px 0px 0px 1px;
+	}
+	
+
+#s{
+	min-width:320px;
+	max-width:320px;
+	background-color: rgb(184,214,255);
+	border-radius:0px 1px 1px 0px;
+	-moz-border-radius: 0px 1px 1px 0px;
+	-khtml-border-radius: 0px 1px 1px 0px;
+	-webkit-border-radius: 0px 1px 1px 0px;
+	}
+
+#y{ 
+min-width:670px;
+max-width:670px;
+background-color:rgb(250,220,190);}
+
+#n{ 
+min-width:670px;
+max-width:670px;
+background-color:rgb(228,230,229);
+text-align:center;}
+
+	
+hr{
+	margin:15px 0px;
+	}
+	
+hr:last-child{ display:none;}
+
+#footer{
+
+	width:100%;
+	background-color:rgb(233,233,233);
+	margin:20px 0 0 0;
+	border-top-color:rgb(175,175,175);
+	}

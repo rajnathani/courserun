@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="author" content="Raj Nathani">
+<meta name="description" content="Course run is a course finder for University of Toronto">
+<meta name="keywords" content="university of toronto course run, university of toronto course, university of toronto,
+course run, uoft course run, uoftcourserun, calendar, timetable, course finder, utoronto">
+
+
+
+<script type="text/javascript">
+
+
+function studentCategory(breadth)
+{
+if (breadth)
+	{ document.getElementById("breadth-categories").style.display = "block";
+	  document.getElementById("distribution-categories").style.display = "none";
+	  document.getElementById("breadth-option").style.textDecoration = "underline";
+	  document.getElementById("distribution-option").style.textDecoration = "none";
+	  document.forms["formy"].elements["student_category"].value = "breadth";
+	  
+	  var distribution_id = document.getElementById('distribution-categories');
+	  var distribution_list = distribution_id.getElementsByTagName('input');
+	  for (var i=0; i<distribution_list.length; i++){
+		distribution_list[i].checked = false;
+		}
+	  
+	}
+else
+	{ document.getElementById("distribution-categories").style.display = "block";
+	  document.getElementById("breadth-categories").style.display = "none";
+	  document.getElementById("distribution-option").style.textDecoration = "underline";
+	  document.getElementById("breadth-option").style.textDecoration = "none";
+	  document.forms["formy"].elements["student_category"].value = "distribution";
+	  
+	  var breadth_id = document.getElementById('breadth-categories');
+	  var breadth_list = breadth_id.getElementsByTagName('input');
+	  for (var i=0; i < breadth_list.length; i++){
+		breadth_list[i].checked = false;
+		}
+	
+	}	
+}
+
+
+	
+
+	
+function semesterChoice()
+	{
+	
+	document.getElementById("fall").checked = false
+	document.getElementById("winter").checked = false
+	var truth_value = document.getElementById("half-year").checked;
+	document.getElementById("fall").disabled=!truth_value;
+	document.getElementById("winter").disabled=!truth_value;
+	}
+
+
+function morePreferredPrograms()
+	{
+	document.forms["formy"].elements["preferred_programs_num"].value = (parseInt(document.forms["formy"].elements["preferred_programs_num"].value) + 1);
+	var preferred_programs_num = parseInt(document.forms["formy"].elements["preferred_programs_num"].value);
+	var program_array = new Array('ABS', 'JPA', 'JFP', 'ACT', 'USA', 'ANA', 'ANT', 'ARH', 'JAL', 'HAJ', 'ARC', 'JGA', 'FAH', 'VIS', 'DRM', 'CAS', 'AST', 'BCB', 'BCH', 'ENG', 'JWH', 'JWU', 'CTA', 'NUS', 'CHM', 'JSC', 'CLA', 'GRK', 'LAT', 'COG', 'JDC', 'JUC', 'JIA', 'COL', 'BIO', 'CSB', 'CSC', 'ECE', 'DTS', 'JQR', 'EAS', 'JMC', 'ECO', 'JEP', 'JMB', 'EEB', 'ENV', 'EHJ', 'JHE', 'JEI', 'ETH', 'JGE', 'GGR', 'JEH', 'EST', 'EUR', 'FIN', 'FOR', 'JFG', 'FCS', 'FRE', 'JFV', 'JFL', 'FSL', 'JFI', 'GER', 'JGI', 'JUG', 'GLG', 'HIS', 'JSH', 'JHP', 'JHA', 'HMB', 'JNH', 'HPS', 'JPH', 'HUN', 'IMM', 'MIJ', 'INI', 'JIE', 'IJC', 'ITA', 'CJS', 'EJH', 'PHE', 'LAS', 'LIN', 'JLP', 'JLS', 'LMP', 'JUM', 'APM', 'MAT', 'MGY', 'MSE', 'MUS', 'HMU', 'TMU', 'NEW', 'IFP', 'NFS', 'NMC', 'NML', 'PCL', 'PCJ', 'PHC', 'PHL', 'JPP', 'PHY', 'JOP', 'PLN', 'POL', 'JPU', 'JPR', 'JPJ', 'JPD', 'JPF', 'PRT', 'PSL', 'PSY', 'PHS', 'STA', 'UNI', 'PPG', 'MHB', 'RLG', 'MGT', 'RSM', 'SLA', 'SMC', 'JSV', 'SOC', 'SAS', 'SPA', 'TRN', 'VIC', 'JNV', 'WDW', 'WGS');
+	var length_program_array = program_array.length;
+	var selectbody = ("<select name='" + "preferred_program" + preferred_programs_num + "'>");
+	selectbody += ("<option value=''>None</option>");
+	for (var i=0;i<length_program_array;i++){
+		selectbody += ("<option value='" + program_array[i] + "'>"+ program_array[i] + "</option>");
+		}
+	selectbody += "</select> ";
+	document.getElementById("preferred_programs").innerHTML += selectbody;
+
+	}
+	
+function moreTimeSlots()
+	{
+	
+	document.forms["formy"].elements["time_slot_num"].value = (parseInt(document.forms["formy"].elements["time_slot_num"].value) + 1);
+	var time_slot_num = parseInt(document.forms["formy"].elements["time_slot_num"].value);
+	
+
+	//Day part
+	var day_body = ('<select name="day' + time_slot_num + '">');
+	day_body += ("<option value=''>None</option>");
+	var days = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+	var code_days = new Array("M", "T", "W", "R", "F");
+	for (var i=0;i<5;i++){
+		day_body += ('<option value="' + code_days[i] + '">'+ days[i] + '</option>');
+		}
+	day_body += "</select>";
+	
+	//Start Time part
+	var start_time_body = ('<select name="start_time' + time_slot_num + '">');
+	start_time_body += ("<option value=''>None</option>");
+	var start_times = new Array("9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm", "8:00 pm", "9:00 pm");
+	var code_start_times = new Array("-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8" ,"9");
+	for (var i=0;i<13;i++){
+		start_time_body += ('<option value="' + code_start_times[i] + '">'+ start_times[i] + '</option>');
+		}
+	start_time_body += "</select>";
+	
+	//End Time part
+	var end_time_body = ('<select name="end_time' + time_slot_num + '">');
+	end_time_body += ("<option value=''>None</option>");
+	var end_times = new Array("10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm", "8:00 pm", "9:00 pm", "10:00 pm");
+	var code_end_times = new Array( "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8" ,"9" ,"10");
+	for (var i=0;i<13;i++){
+		end_time_body += ('<option value="' + code_end_times[i] + '">'+ end_times[i] + '</option>');
+		}
+	end_time_body += "</select>";
+	
+	var table = document.getElementById('time-slot-table');
+	var row = table.insertRow(time_slot_num);
+
+	var day_cell= row.insertCell(0);
+	var start_time_cell=row.insertCell(1);
+	var end_time_cell=row.insertCell(2);
+	
+	day_cell.innerHTML = day_body;
+	start_time_cell.innerHTML = start_time_body;
+	end_time_cell.innerHTML = end_time_body;
+	
+	}
+	
+</script>
+
+
+<link rel="stylesheet" href="style2.css" type="text/css"/>
+<link rel="stylesheet" href="style_filter.css" type="text/css"/>
+
+</head>
+<body>
+
+
+
+<div id="header">
+<div id="img-holder">
+<img src="course_run_head.png"/>
+</div>
+</div>
+<div id="content-box">
+<form name="formy" id="hippy-form" action="cgi-bin/new_course_run.py">
+	
+	
+	<table class="selection-table" border="1">
+		<tr>
+			<td class="sub-header breadth" id="category-display">CATEGORIES<br/>( Breadth / Distribution )</td>
+			<td class="selection" colspan="2">
+				<table border="1" class="choose-category">
+					<tr>
+						<th colspan="2">
+						YEAR OF JOINING UNIVERSITY OF TORONTO
+						</th>
+						
+						<input type="hidden" name="student_category" value="breadth"/>
+						<td onclick="studentCategory(false)"><span id="distribution-option">BEFORE 2011</span></td>
+						<td onclick="studentCategory(true)" ><span id="breadth-option">AFTER 2011</span></td>
+					</tr>
+				</table>
+				
+				<div id="distribution-categories"><h1 class="mini-head">DISTRIBUTION CATEGORIES</h1>
+					<div class="options">
+						<label for="7"><input name="category" value="7" type="checkbox" id="7" /> Humanities courses</label><br />
+						<label for="8"><input name="category" value="8" type="checkbox" id="8" /> Social Science courses</label><br />
+						<label for="9"><input name="category" value="9" type="checkbox" id="9" /> Science courses</label><br />
+						<label for="10"><input name="category" value="10" type="checkbox" id="10" /> None</label>
+					</div>
+				</div>
+			
+			
+				<div id="breadth-categories"><h1 class="mini-head">BREADTH CATEGORIES</h1>
+					<div class="options">
+						<label for="1"><input name="category" value="1" type="checkbox" id="1" /> Creative and Cultural Representations (1)</label><br />
+						<label for="2"><input name="category" value="2" type="checkbox" id="2" /> Thought, Belief and Behaviour (2)</label><br />
+						<label for="3"><input name="category" value="3" type="checkbox" id="3" /> Society and its Institutions (3)</label><br />
+						<label for="4"><input name="category" value="4" type="checkbox" id="4" /> Living Things and Their Environment (4)</label><br />
+						<label for="5"><input name="category" value="5" type="checkbox" id="5" /> The Physical and Mathematical Universes (5)</label><br />
+						<label for="6"><input name="category" value="6" type="checkbox" id="6" /> None</label>
+					</div>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="sub-header credit">DURATION AND CREDITS</td>
+			<td class="selection">
+				<h1 class="mini-head">Duration</h1>
+					<div class="options">
+						<label for="half-year"><input type="checkbox" id="half-year" onclick="semesterChoice()" /> Half-Year</label> 
+							<label for="fall"><input name="duration" value="fall" type="checkbox" disabled="disabled" id="fall" />fall</label>
+							<label for="winter"><input name="duration" value="winter" type="checkbox" disabled="disabled" id="winter" />winter</label>
+						<br/>
+						<label for="full-year"><input name="duration" value="full" type="checkbox" id="full-year" /> Full-Year</label>
+					</div>
+				
+			</td>
+			<td class="selection">
+				
+				<h1 class="mini-head">Credit Value</h1>
+					<div class="options">
+						<label for="H"><input name="credit" value="H" type="checkbox" id="H"/> Half-Credit Course</label><br/>
+						<label for="Y"><input name="credit" value="Y" type="checkbox" id="Y"/> Full-Credit Course</label>
+					</div>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td class="sub-header year">YEAR LEVEL</td>
+			<td class="selection" colspan="2">
+			<h1 class="mini-head">Year Level</h1>
+				<div class="options">
+					<label for="100"><input name="year" value="100" id="100" type="checkbox" /> 100 Level</label> &nbsp;
+					<label for="200"><input name="year" value="200" id="200" type="checkbox" /> 200 Level</label> &nbsp;
+					<label for="300"><input name="year" value="300" id="300" type="checkbox" /> 300 Level</label> &nbsp;
+					<label for="400"><input name="year" value="400" id="400" type="checkbox" /> 400 Level</label> &nbsp;
+					<label for="500"><input name="year" value="500" id="500" type="checkbox" /> 500 Level</label> &nbsp;
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="sub-header preferred-programs">PREFERRED PROGRAMS</td>
+			<td class="selection" colspan="2">
+				<input type="hidden" name="preferred_programs_num" value="0"/>
+				Preferred Program(s)
+				<span id="preferred_programs">
+				<script type="text/javascript">
+				morePreferredPrograms();
+				</script>
+				</span>
+				<span id="more_preferred" class="more" onClick="morePreferredPrograms();">
+				more
+				</span>
+				
+				
+
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="sub-header time-selection">TIME SELECTION</td>
+			<td class="selection">
+				<table class="time-slot-table" id="time-slot-table">
+					<tr>
+						<th>DAY</th>
+						<th>START TIME</th>
+						<th>END TIME</th>
+					</tr>
+				</table>
+					<input type="hidden" name="time_slot_num" value="0"/>
+					<script type="text/javascript">moreTimeSlots();</script>
+				<span id="more_time_slots" class="more" onClick="moreTimeSlots();" style="margin-left:11px;">more</span>
+				
+			</td>
+			<td class="selection" style="vertical-align:top;">
+				<span style="text-align:center; text-decoration:underline;">MATCH FOR</span><br/>
+						&nbsp;<label for="L"><input name="section" value="L" type="checkbox" id="L" checked="checked" /> Lectures</label><br />
+						&nbsp;<label for="T"><input name="section" value="T" type="checkbox" id="T" /> Tutorials</label><br />
+						&nbsp;<label for="P"><input name="section" value="P" type="checkbox" id="P" /> Practicals</label><br />
+				
+			</td>
+		</tr>
+		
+	</table>
+
+<div id="styled-submit-area">
+<input type="submit" value="SUBMIT" class="styled-submit"/>
+</div>
+</form>
+
+
+
+</div>
+<div id="footer">
+<div class="footer-list">
+<ul>
+<li><a href>contact</a></li>
+<li><a href>feedback</a></li>
+<li><a href>report bug</a></li>
+<li><a href>make a donation</a></li>
+</ul>
+</div>
+Copyright &copy;2012 Gigadote | All Rights Reserved
+</div>
+</body>
+
+</html>

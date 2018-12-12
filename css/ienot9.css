@@ -1,0 +1,9 @@
+.search-button{
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#4BE65A,EndColorStr=#3CD25A);
+	}
+	
+
+	
+.search-button:hover{
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#50F069,EndColorStr=#46DC64);
+	}

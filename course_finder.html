@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Course Run</title>
+<meta name="author" content="raj nathani">
+<meta name="description" content="The ultimate search platform for finding courses at University of Toronto.">
+<meta name="keywords" content="university of toronto course run, university of toronto course, university of toronto,
+course run, uoft course run, uoftcourserun, calendar, timetable, course finder, utoronto">
+
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<link rel="stylesheet" href="css/style_filter.css" type="text/css"/>
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="ienot9.css" />
+<![endif]-->
+<!-- has to load before page elements load -->
+<script type="text/javascript" language="Javascript" src="js/filter.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+	<img id="main-logo" onmouseover="document.getElementById('main-logo').style.cursor='pointer'" onclick="document.location.href = 'index.html';" src="img/course_run_head.png" />
+</div>
+<div id="nav-bar">
+<div id="nav-links">
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/calendar/#">CALENDAR</a>
+<a class="link left" href="http://www.artsandscience.utoronto.ca/ofr/timetable/winter/sponsors.htm">TIMETABLE</a>
+<a class="link left" href="http://www.artsci.utoronto.ca/current/undergraduate/first-year-seminars/">SEMINARS</a>
+<a class="link left" href="https://www.rosi.utoronto.ca/main.html">ROSI</a>
+</div>
+<form name="search" style="margin:0; padding:0; float:right;" action="cgi-bin/search.py">
+<input type="text" name="query" id="search-box" class="search-box" maxlength="100" autocomplete="off" value="Course Code or Program" tabindex="2" onFocus="removeSearchText();" onBlur="addDim();"/>
+<input type="submit" class="search-button" value="GO" tabindex="3">
+</form>
+</div>
+<div id="content-box">
+<form name="formy" id="hippy-form" action="cgi-bin/new_course_run.py" onSubmit="return validateForm();">
+	
+	<table class="selection-table" border="1">
+		<tr>
+			<td class="sub-header breadth" id="category-display">CATEGORIES<br/>( Breadth / Distribution )</td>
+			<td class="selection" colspan="2">
+				<table border="1" class="choose-category">
+					<tr>
+						<th colspan="2">
+						YEAR OF JOINING UNIVERSITY OF TORONTO
+						</th>
+						
+						<input type="hidden" name="student_category" value="breadth"/>
+						<td onclick="studentCategory(false)"><span id="distribution-option">BEFORE 2010</span></td>
+						<td onclick="studentCategory(true)" ><span id="breadth-option">AFTER 2010</span></td>
+					</tr>
+				</table>
+				
+				<div id="distribution-categories" style="display:none;float:left;"><h1 class="mini-head">DISTRIBUTION CATEGORIES</h1>
+					<div class="options">
+						<label for="7"><input name="category" value="7" type="checkbox" id="7" /> Humanities courses</label><br />
+						<label for="8"><input name="category" value="8" type="checkbox" id="8" /> Social Science courses</label><br />
+						<label for="9"><input name="category" value="9" type="checkbox" id="9" /> Science courses</label><br />
+						<label for="10"><input name="category" value="0" type="checkbox" id="0" /> None</label>
+					</div>
+				</div>
+			
+			
+				<div id="breadth-categories" style="float:left;"><h1 class="mini-head">BREADTH CATEGORIES</h1>
+					<div class="options">
+						<label for="1"><input name="category" value="1" type="checkbox" id="1" /> Creative and Cultural Representations (1)</label><br />
+						<label for="2"><input name="category" value="2" type="checkbox" id="2" /> Thought, Belief and Behaviour (2)</label><br />
+						<label for="3"><input name="category" value="3" type="checkbox" id="3" /> Society and its Institutions (3)</label><br />
+						<label for="4"><input name="category" value="4" type="checkbox" id="4" /> Living Things and Their Environment (4)</label><br />
+						<label for="5"><input name="category" value="5" type="checkbox" id="5" /> The Physical and Mathematical Universes (5)</label><br />
+						<label for="6"><input name="category" value="6" type="checkbox" id="6" /> None</label>
+					</div>
+				</div>
+				<div style="margin:14px 55px; 0 0; padding:0; float:right; font-size:11px; color:rgb(60,60,60);"><label for="all"  onclick="allCategories()"><input value="all" type="checkbox" id="all" style="width:0.8em; height:0.8em; vertical-align:middle;"  /> ALL CATEGORIES</label></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="sub-header credit">DURATION, SESSION & CREDITS</td>
+			<td class="selection">
+				<h1 class="mini-head">Duration</h1>
+					<div class="options">
+						<label for="half-year"  onclick="semesterChoice()"><input type="checkbox" id="half-year" checked="checked" /> Half-Year&nbsp;</label> 
+							<label for="fall"><input name="duration" value="F" type="checkbox" id="fall" /> Fall</label>
+							<label for="winter"><input name="duration" value="S" type="checkbox" id="winter" /> Winter</label>
+						<br/>
+						<label for="full-year"><input name="duration" value="Y" type="checkbox" id="full-year" checked="checked" /> Full-Year</label>
+					</div>
+				
+			</td>
+			<td class="selection">
+				<h1 class="mini-head">Credit Value</h1>
+					<div class="options">
+						<label for="H"><input name="credit" value="H" type="checkbox" id="H" checked="checked"/> Half-Credit Course</label><br/>
+						<label for="Y"><input name="credit" value="Y" type="checkbox" id="Y" checked="checked"/> Full-Credit Course</label>
+					</div>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td class="sub-header year">YEAR LEVEL</td>
+			<td class="selection" colspan="2">
+			<h1 class="mini-head">Year Level</h1>
+				<div class="options">
+					<label for="100"><input name="year" value="1" id="100" type="checkbox" checked="checked" /> 100 Level</label> &nbsp;
+					<label for="200"><input name="year" value="2" id="200" type="checkbox" checked="checked" /> 200 Level</label> &nbsp;
+					<label for="300"><input name="year" value="3" id="300" type="checkbox" checked="checked" /> 300 Level</label> &nbsp;
+					<label for="400"><input name="year" value="4" id="400" type="checkbox" checked="checked" /> 400 Level</label>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="sub-header preferred-programs" >PREFERRED PROGRAMS</td>
+			<td class="selection" colspan="2">
+				<input type="hidden" name="preferred_programs_num" value="0"/>
+				&nbsp;Program Name(s) 
+				<span id="preferred_programs">
+				<script type="text/javascript">
+				morePreferredPrograms();
+				</script>
+				</span>
+				<span id="more_preferred" class="more" onClick="morePreferredPrograms();">
+				more
+				</span>
+			</td>
+			</tr>
+
+		</tr>
+		
+		<tr>
+			<td class="sub-header time-selection">TIME SELECTION</td>
+			<td class="selection"  style="vertical-align:top;">
+				<div id="time-slot-cells">
+						<span style="padding-left:36px;">DAY</span>
+						<span style="padding-left:38px;">START TIME</span>
+						<span style="padding-left:14px;">END TIME</span>
+						<br/>
+				
+					<input type="hidden" name="time_slot_num" value="0"/>
+					<script type="text/javascript">moreTimeSlots();</script>
+				</div>
+				<span id="more_time_slots" class="more" onClick="moreTimeSlots();" style="margin:3px 0px 0px 3px;">more</span>
+				
+			</td>
+			<td class="selection" style="vertical-align:top; padding-right:0px;">
+				<span style="text-align:center; text-decoration:underline;">MATCH FOR</span><br/>
+					<div class="options">
+						<label for="L"><input name="section" value="L" type="checkbox" id="L" checked="checked" /> Lectures</label><br />
+						<label for="T"><input name="section" value="T" type="checkbox" id="T" /> Tutorials</label><br />
+						<label for="P"><input name="section" value="P" type="checkbox" id="P" /> Practicals</label><br />
+						<span style='margin:0; padding:0; visibility:hidden;' id='tba'><label for="N" style="line-height:2.2em;"><input name="duration" value="N" type="checkbox" id="N" checked="checked" style="width:0.8em;" /><span style="font-size:8px;"> include courses with undeclared timings</span></label></span>
+					</div>
+			</td>
+		</tr>
+		
+	</table>
+
+<div id="styled-submit-area">
+<input type="submit" value="PROCESS" class="start-course-run" id="process" style="margin-top:8px; margin-bottom:28px; -moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;" />
+</div>
+</form>
+
+</div>
+<div id="footer">
+<div class="footer-list">
+<ul>
+<li><span onClick="popUp('feedback');" tabindex="4">feedback</span></li>
+<li><span onClick="popUp('about');" tabindex="5">about</span></li>
+<li><span onClick="popUp('bug');" tabindex="6">report bug</span></li>
+<li><a href="http://www.facebook.com/pages/Course-Run-University-of-Toronto/392789940783083" tabindex="7">facebook</a></li>
+<li><a href="https://twitter.com/CourseRun" tabindex="8">twitter</a></li>
+</ul>
+</div>
+Copyright &copy;2012 Gigadote | All Rights Reserved
+</div>
+</div> <!-- end of container -->
+
+</body>
+<script type="text/javascript" language="Javascript">
+semesterChoice();
+var k =  (document.getElementById('distribution-categories').style.display == "none");
+
+if (k){
+	document.forms["formy"].elements["student_category"].value = 'breadth'; }
+else{
+	document.forms["formy"].elements["student_category"].value = 'distribution';}
+
+</script>
+<script type="text/javascript" language="Javascript" src="js/main.js"></script>
+</html>

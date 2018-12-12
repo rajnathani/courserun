@@ -1,0 +1,93 @@
+
+
+#search-area{
+	position:relative;
+	margin:auto;
+	margin-top:100px;
+	margin-bottom:230px;
+	width:400px;
+	height:auto;
+	background:transparent;
+	
+	
+	}
+	
+#search-area h1{
+	margin:0;
+	margin:auto;
+	margin-bottom:20px;
+	padding:0;
+	
+	font-family:verdana;
+	font-weight:normal;
+	
+	text-align:center;
+	
+
+	}
+	
+.wing-search-box{
+	position:relative;
+	display:block;
+	float:left;
+	margin:0;
+	margin: 0px 10px 0px 0px;
+	height:13px;
+	width:317px;
+	padding: 5px 7px;
+	
+	border:1px solid rgb(160,170,180);
+	background-color:white;
+	
+	
+	border-radius:2px;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	
+	box-shadow:inset 1px 1px 2px rgb(220,220,220);
+	-moz-box-shadow: inset 1px 1px 2px rgb(220,220,220);
+	-webkit-box-shadow: 1inset 1px 1px 2px rgb(220,220,220);
+	}
+	
+	
+.wing-search-box:hover{
+	border-color: rgb(155,155,155);
+}
+
+.wing-search-box:focus{
+	outline-color:rgb(140,140,255);
+}
+	
+.wing-button{
+	display:block;
+	float:left;
+	position:relative;
+	padding:3px 5px;
+	height:24px;
+	
+	margin:0;
+	margin:auto;
+	
+	background-color: rgb(30,30,240);
+	color:rgb(252,252,252);
+	font-weight:bold;
+	
+	border:1px solid rgb(60,60,100);
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=rgb(70,70,70),EndColorStr=rgb(5,5,5));
+	background-image:-moz-linear-gradient(top,rgb(70,70,70)) 0,rgb(5,5,5) 45px);
+	background-image:-ms-linear-gradient(top,rgb(70,70,70) 0,rgb(5,5,5) 45px);
+	background-image:-o-linear-gradient(top,rgb(70,70,70) 0,rgb(5,5,5) 45px);
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,rgb(70,70,70)),color-stop(45px,rgb(5,5,5)));
+	background-image:-webkit-linear-gradient(top,rgb(40,80,243) 0,rgb(19,54,203) 13px);
+	background-image:linear-gradient(to bottom,rgb(70,70,70)) 0,rgb(5,5,5) 45px);
+	}
+	
+.wing-button:hover{
+	background-color:rgb(0,0,255);
+	}
